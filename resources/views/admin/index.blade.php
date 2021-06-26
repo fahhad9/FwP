@@ -1,1 +1,6 @@
-<h1>Admin Index</h1>
+@extends('layouts.admin')
+
+@section('content')
+    <h2>Welcome Admin</h2>
+
+    @endsection

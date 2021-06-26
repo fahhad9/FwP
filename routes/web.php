@@ -1,5 +1,6 @@
 <?php
 
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.index')->Middleware('role:admin');
 
 Route::get('/', function () {
     return view('welcome');
